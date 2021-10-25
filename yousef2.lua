@@ -1,5 +1,5 @@
 ------------------------------------------------
--- This Source Was Developed By (Ali) @AAAPA.--
+-- This Source Was Developed By (yousef) @yousef_labban.--
 --    This Is The للمزيد من البوتات @yousef_labban1 .    --
 --                 - yousef2 -                  --
 --         -- https://Yousef_Labban1 --          --
@@ -651,7 +651,7 @@ end
 local function Filters(msg, value)
 local ali = (yousef2..'Ali:Filters:'..msg.chat_id_)
 if ali then
-local names = DevAli:hkeys(ali)
+local names = DevAli:hkeys(yousef)
 local value = value:gsub(' ','')
 for i=1, #names do
 if string.match(value:lower(), names[i]:lower()) and not VipMem(msg) then
@@ -2295,7 +2295,7 @@ local Ali = "🇸🇦┇ تم حفظ الرد رقم ↫ "..(#List+1).."\n🇸�
 keyboard = {} 
 keyboard.inline_keyboard = {{{text="انهاء وحفظ "..(#List+1).." من الردود",callback_data="/EndRedod:"..msg.sender_user_id_..GetGpTexts}},{{text="الغاء وحذف التخزين",callback_data="/DelRedod:"..msg.sender_user_id_..GetGpTexts}}} 
 Msg_id = msg.id_/2097152/0.5
-https.request("https://api.telegram.org/bot"..TokenBot..'/sendMessage?chat_id='..msg.chat_id_..'&text=' .. URL.escape(Ali).."&reply_to_message_id="..Msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+https.request("https://api.telegram.org/bot"..TokenBot..'/sendMessage?chat_id='..msg.chat_id_..'&text=' .. URL.escape(yousef).."&reply_to_message_id="..Msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 return false
 end
 end
@@ -9775,7 +9775,7 @@ local Ali = "🇸🇦┇ لاتستطيع اضافة رد بالتاكيد مض�
 keyboard = {} 
 keyboard.inline_keyboard = {{{text="حذف الرد ↫ "..text,callback_data="/DelRed:"..msg.sender_user_id_..text}}} 
 Msg_id = msg.id_/2097152/0.5
-https.request("https://api.telegram.org/bot"..TokenBot..'/sendMessage?chat_id='..msg.chat_id_..'&text=' .. URL.escape(Ali).."&reply_to_message_id="..Msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+https.request("https://api.telegram.org/bot"..TokenBot..'/sendMessage?chat_id='..msg.chat_id_..'&text=' .. URL.escape(yousef).."&reply_to_message_id="..Msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 DevAli:del(yousef2..'Ali:Add:GpRedod'..msg.sender_user_id_..msg.chat_id_)
 return false
 end
@@ -10783,7 +10783,7 @@ end
 --     Source yousef2     --
 end 
 ------------------------------------------------
--- This Source Was Developed By (Ali) @AAAPA.--
+-- This Source Was Developed By (yousef) @yousef_labban.--
 --   This Is The للمزيد من البوتات @yousef_labban1 .   --
 --                - yousef2 -                 --
 --        -- https://Yousef_Labban1 --         --
