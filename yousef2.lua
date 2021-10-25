@@ -4256,8 +4256,8 @@ Welcome To Source
 keyboard = {} 
 keyboard.inline_keyboard = {
 {{text = '♪ قناة البوت',url="https://Yousef_Labban1"}},
-{{text = '♪ Exp Source',url="t.me/Yousef_Labban1"}},
-{{text = '♪ Developer',url="t.me/Yousef_Labban"}},
+{{text = '♪ Exp Source',url="https://Yousef_Labban1"}},
+{{text = '♪ Developer',url="https://Yousef_Labban"}},
 {{text = '♪ Tws yousef2',url="https://t.me/Mhsliem15bot"}},
 }
 local msg_id = msg.id_/2097152/0.5
