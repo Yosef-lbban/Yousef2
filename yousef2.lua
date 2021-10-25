@@ -1342,12 +1342,12 @@ local Text = [[
 🇸🇦┇ رفع • تنزيل ↫ مطور ثانوي
 🇸🇦┇ الثانويين • حذف الثانويين
 🇸🇦┇ تعيين • حذف ↫ رسالة الايدي
-🇸🇦┇ اذاعه للكل بالتوجيه ↫ بالرد
+🇸🇦┇ اذاعة للكل بالتوجيه ↫ بالرد
 ●━─━─━🇸🇦━─━─━●
 🇸🇦┇ تفعيل ملف + اسم الملف
 🇸🇦┇ تعطيل ملف + اسم الملف
 🇸🇦┇ تفعيل • تعطيل + الامر ↫ ⤈
-🇸🇦┇ الاذاعه • الاشتراك الاجباري
+🇸🇦┇ الاذاعة • الاشتراك الاجباري
 🇸🇦┇ ترحيب البوت • المغادره
 🇸🇦┇ البوت الخدمي • التواصل
 ●━─━─━🇸🇦━─━─━●
@@ -1737,10 +1737,10 @@ local key = {
 {'تعطيل ترحيب البوت','تفعيل ترحيب البوت'},
 {'↫ تغير معلومات الترحيب ♪'},
 {'↫ تعطيل المغادره ♪','↫ تفعيل المغادره ♪'},
-{'↫ تعطيل الاذاعه ♪','↫ تفعيل الاذاعه ♪'},
-{'↫ اذاعه بالتثبيت ♪'},
-{'↫ اذاعه عام ♪','↫ اذاعه خاص ♪'},
-{'↫ اذاعه عام بالتوجيه ♪','↫ اذاعه خاص بالتوجيه ♪'},
+{'↫ تعطيل الاذاعة ♪','↫ تفعيل الاذاعة ♪'},
+{'↫ اذاعة بالتثبيت ♪'},
+{'↫ اذاعة عام ♪','↫ اذاعة خاص ♪'},
+{'↫ اذاعة عام بالتوجيه ♪','↫ اذاعة خاص بالتوجيه ♪'},
 {'~ تعيين رسائل الاوامر ~'},
 {'تعطيل البوت الخدمي','تفعيل البوت الخدمي'},
 {'جلب نسخه السورس','تحديث السورس','جلب نسخه القروبات'},
@@ -4223,10 +4223,10 @@ return false
 end end
 --     Source yousef2     --
 if SudoBot(msg) then
-if text == 'اذاعه للكل بالتوجيه' and tonumber(msg.reply_to_message_id_) > 0 then
+if text == 'اذاعة للكل بالتوجيه' and tonumber(msg.reply_to_message_id_) > 0 then
 function yousef2TEAM(extra,result,success)
 if DevAli:get(yousef2.."Ali:Send:Bot"..yousef2) and not SecondSudo(msg) then 
-send(msg.chat_id_, msg.id_,"🇸🇦┇ الاذاعه معطله من قبل المطور الاساسي")
+send(msg.chat_id_, msg.id_,"🇸🇦┇ الاذاعة معطله من قبل المطور الاساسي")
 return false
 end
 local GpList = DevAli:smembers(yousef2.."Ali:Groups")
@@ -9005,13 +9005,13 @@ local yousef2TEAM = '🇸🇦┇ اهلا عزيزي ↫ '..AliRank(msg)..' \n�
 alimoned(msg.chat_id_, msg.sender_user_id_, msg.id_, yousef2TEAM, 14, string.len(msg.sender_user_id_))
 DevAli:set(yousef2.."Ali:Left:Bot"..yousef2,true) 
 end 
-if text == 'تفعيل الاذاعه' or text == '↫ تفعيل الاذاعه ♪' then 
-local yousef2TEAM = '🇸🇦┇ اهلا عزيزي ↫ '..AliRank(msg)..' \n🇸🇦┇ تم تفعيل الاذاعه بنجاح'
+if text == 'تفعيل الاذاعة' or text == '↫ تفعيل الاذاعة ♪' then 
+local yousef2TEAM = '🇸🇦┇ اهلا عزيزي ↫ '..AliRank(msg)..' \n🇸🇦┇ تم تفعيل الاذاعة بنجاح'
 alimoned(msg.chat_id_, msg.sender_user_id_, msg.id_, yousef2TEAM, 14, string.len(msg.sender_user_id_))
 DevAli:del(yousef2.."Ali:Send:Bot"..yousef2)
 end
-if text == 'تعطيل الاذاعه' or text == '↫ تعطيل الاذاعه ♪' then 
-local yousef2TEAM = '🇸🇦┇ اهلا عزيزي ↫ '..AliRank(msg)..' \n🇸🇦┇ تم تعطيل الاذاعه بنجاح'
+if text == 'تعطيل الاذاعة' or text == '↫ تعطيل الاذاعة ♪' then 
+local yousef2TEAM = '🇸🇦┇ اهلا عزيزي ↫ '..AliRank(msg)..' \n🇸🇦┇ تم تعطيل الاذاعة بنجاح'
 alimoned(msg.chat_id_, msg.sender_user_id_, msg.id_, yousef2TEAM, 14, string.len(msg.sender_user_id_))
 DevAli:set(yousef2.."Ali:Send:Bot"..yousef2,true) 
 end
@@ -9462,9 +9462,9 @@ end
 end
 end
 --     Source yousef2     --
-if text == "اذاعه خاص" and msg.reply_to_message_id_ == 0 and SudoBot(msg) or text == "↫ اذاعه خاص ♪" and msg.reply_to_message_id_ == 0 and SudoBot(msg) then 
+if text == "اذاعة خاص" and msg.reply_to_message_id_ == 0 and SudoBot(msg) or text == "↫ اذاعة خاص ♪" and msg.reply_to_message_id_ == 0 and SudoBot(msg) then 
 if DevAli:get(yousef2.."Ali:Send:Bot"..yousef2) and not SecondSudo(msg) then 
-send(msg.chat_id_, msg.id_,"🇸🇦┇ الاذاعه معطله من قبل المطور الاساسي")
+send(msg.chat_id_, msg.id_,"🇸🇦┇ الاذاعة معطله من قبل المطور الاساسي")
 return false
 end
 DevAli:setex(yousef2.."Ali:Send:Pv"..msg.chat_id_..":" .. msg.sender_user_id_, 600, true) 
@@ -9474,7 +9474,7 @@ return false
 end 
 if DevAli:get(yousef2.."Ali:Send:Pv"..msg.chat_id_..":" .. msg.sender_user_id_) then 
 if text == 'الغاء' then   
-Dev_Ali(msg.chat_id_, msg.id_, 1, "🇸🇦┇ تم الغاء امر الاذاعه بنجاح", 1, 'md')
+Dev_Ali(msg.chat_id_, msg.id_, 1, "🇸🇦┇ تم الغاء امر الاذاعة بنجاح", 1, 'md')
 DevAli:del(yousef2.."Ali:Send:Pv"..msg.chat_id_..":" .. msg.sender_user_id_) 
 return false
 end 
@@ -9529,9 +9529,9 @@ Dev_Ali(msg.chat_id_, msg.id_, 1, "🇸🇦┇ تم اذاعة "..AliText.." ب�
 DevAli:del(yousef2.."Ali:Send:Pv"..msg.chat_id_..":" .. msg.sender_user_id_) 
 end
 --     Source yousef2     --
-if text == "اذاعه" and msg.reply_to_message_id_ == 0 and SudoBot(msg) or text == "↫ اذاعه عام ♪" and msg.reply_to_message_id_ == 0 and SudoBot(msg) then 
+if text == "اذاعة" and msg.reply_to_message_id_ == 0 and SudoBot(msg) or text == "↫ اذاعة عام ♪" and msg.reply_to_message_id_ == 0 and SudoBot(msg) then 
 if DevAli:get(yousef2.."Ali:Send:Bot"..yousef2) and not SecondSudo(msg) then 
-send(msg.chat_id_, msg.id_,"🇸🇦┇ الاذاعه معطله من قبل المطور الاساسي")
+send(msg.chat_id_, msg.id_,"🇸🇦┇ الاذاعة معطله من قبل المطور الاساسي")
 return false
 end
 DevAli:setex(yousef2.."Ali:Send:Gp"..msg.chat_id_..":" .. msg.sender_user_id_, 600, true) 
@@ -9541,7 +9541,7 @@ return false
 end 
 if DevAli:get(yousef2.."Ali:Send:Gp"..msg.chat_id_..":" .. msg.sender_user_id_) then 
 if text == 'الغاء' then   
-Dev_Ali(msg.chat_id_, msg.id_, 1, "🇸🇦┇ تم الغاء امر الاذاعه بنجاح", 1, 'md')
+Dev_Ali(msg.chat_id_, msg.id_, 1, "🇸🇦┇ تم الغاء امر الاذاعة بنجاح", 1, 'md')
 DevAli:del(yousef2.."Ali:Send:Gp"..msg.chat_id_..":" .. msg.sender_user_id_) 
 return false
 end 
@@ -9596,9 +9596,9 @@ Dev_Ali(msg.chat_id_, msg.id_, 1, "🇸🇦┇ تم اذاعة "..AliText.." ب�
 DevAli:del(yousef2.."Ali:Send:Gp"..msg.chat_id_..":" .. msg.sender_user_id_) 
 end
 --     Source yousef2     --
-if text == "اذاعه بالتوجيه" and msg.reply_to_message_id_ == 0 and SudoBot(msg) or text == "↫ اذاعه عام بالتوجيه ♪" and msg.reply_to_message_id_ == 0 and SudoBot(msg) then 
+if text == "اذاعة بالتوجيه" and msg.reply_to_message_id_ == 0 and SudoBot(msg) or text == "↫ اذاعة عام بالتوجيه ♪" and msg.reply_to_message_id_ == 0 and SudoBot(msg) then 
 if DevAli:get(yousef2.."Ali:Send:Bot"..yousef2) and not SecondSudo(msg) then 
-send(msg.chat_id_, msg.id_,"🇸🇦┇ الاذاعه معطله من قبل المطور الاساسي")
+send(msg.chat_id_, msg.id_,"🇸🇦┇ الاذاعة معطله من قبل المطور الاساسي")
 return false
 end
 DevAli:setex(yousef2.."Ali:Send:FwdGp"..msg.chat_id_..":" .. msg.sender_user_id_, 600, true) 
@@ -9608,7 +9608,7 @@ return false
 end 
 if DevAli:get(yousef2.."Ali:Send:FwdGp"..msg.chat_id_..":" .. msg.sender_user_id_) then 
 if text == 'الغاء' then   
-Dev_Ali(msg.chat_id_, msg.id_, 1, "🇸🇦┇ تم الغاء امر الاذاعه بنجاح", 1, 'md')
+Dev_Ali(msg.chat_id_, msg.id_, 1, "🇸🇦┇ تم الغاء امر الاذاعة بنجاح", 1, 'md')
 DevAli:del(yousef2.."Ali:Send:FwdGp"..msg.chat_id_..":" .. msg.sender_user_id_) 
 return false  
 end 
@@ -9620,9 +9620,9 @@ Dev_Ali(msg.chat_id_, msg.id_, 1, "🇸🇦┇ تم اذاعة رسالتك با
 DevAli:del(yousef2.."Ali:Send:FwdGp"..msg.chat_id_..":" .. msg.sender_user_id_) 
 end
 --     Source yousef2     --
-if text == "اذاعه خاص بالتوجيه" and msg.reply_to_message_id_ == 0 and SudoBot(msg) or text == "↫ اذاعه خاص بالتوجيه ♪" and msg.reply_to_message_id_ == 0 and SudoBot(msg) then 
+if text == "اذاعة خاص بالتوجيه" and msg.reply_to_message_id_ == 0 and SudoBot(msg) or text == "↫ اذاعة خاص بالتوجيه ♪" and msg.reply_to_message_id_ == 0 and SudoBot(msg) then 
 if DevAli:get(yousef2.."Ali:Send:Bot"..yousef2) and not SecondSudo(msg) then 
-send(msg.chat_id_, msg.id_,"🇸🇦┇ الاذاعه معطله من قبل المطور الاساسي")
+send(msg.chat_id_, msg.id_,"🇸🇦┇ الاذاعة معطله من قبل المطور الاساسي")
 return false
 end
 DevAli:setex(yousef2.."Ali:Send:FwdPv"..msg.chat_id_..":" .. msg.sender_user_id_, 600, true) 
@@ -9632,7 +9632,7 @@ return false
 end 
 if DevAli:get(yousef2.."Ali:Send:FwdPv"..msg.chat_id_..":" .. msg.sender_user_id_) then 
 if text == 'الغاء' then   
-Dev_Ali(msg.chat_id_, msg.id_, 1, "🇸🇦┇ تم الغاء امر الاذاعه بنجاح", 1, 'md')
+Dev_Ali(msg.chat_id_, msg.id_, 1, "🇸🇦┇ تم الغاء امر الاذاعة بنجاح", 1, 'md')
 DevAli:del(yousef2.."Ali:Send:FwdPv"..msg.chat_id_..":" .. msg.sender_user_id_) 
 return false  
 end 
@@ -9644,9 +9644,9 @@ Dev_Ali(msg.chat_id_, msg.id_, 1, "🇸🇦┇ تم اذاعة رسالتك با
 DevAli:del(yousef2.."Ali:Send:FwdPv"..msg.chat_id_..":" .. msg.sender_user_id_) 
 end
 --     Source yousef2     --
-if text == "اذاعه بالتثبيت" and msg.reply_to_message_id_ == 0 and SudoBot(msg) or text == "↫ اذاعه بالتثبيت ♪" and msg.reply_to_message_id_ == 0 and SudoBot(msg) then 
+if text == "اذاعة بالتثبيت" and msg.reply_to_message_id_ == 0 and SudoBot(msg) or text == "↫ اذاعة بالتثبيت ♪" and msg.reply_to_message_id_ == 0 and SudoBot(msg) then 
 if DevAli:get(yousef2.."Ali:Send:Bot"..yousef2) and not SecondSudo(msg) then 
-send(msg.chat_id_, msg.id_,"🇸🇦┇ الاذاعه معطله من قبل المطور الاساسي")
+send(msg.chat_id_, msg.id_,"🇸🇦┇ الاذاعة معطله من قبل المطور الاساسي")
 return false
 end
 DevAli:setex(yousef2.."Ali:Send:Gp:Pin"..msg.chat_id_..":" .. msg.sender_user_id_, 600, true) 
@@ -9656,7 +9656,7 @@ return false
 end 
 if DevAli:get(yousef2.."Ali:Send:Gp:Pin"..msg.chat_id_..":" .. msg.sender_user_id_) then 
 if text == "الغاء" then   
-Dev_Ali(msg.chat_id_, msg.id_, 1, "🇸🇦┇ تم الغاء امر الاذاعه بنجاح", 1, 'md')
+Dev_Ali(msg.chat_id_, msg.id_, 1, "🇸🇦┇ تم الغاء امر الاذاعة بنجاح", 1, 'md')
 DevAli:del(yousef2.."Ali:Send:Gp:Pin"..msg.chat_id_..":" .. msg.sender_user_id_) 
 return false
 end 
@@ -10371,12 +10371,12 @@ local Text = [[
 🇸🇦┇ رفع • تنزيل ↫ مطور ثانوي
 🇸🇦┇ الثانويين • حذف الثانويين
 🇸🇦┇ تعيين • حذف ↫ رسالة الايدي
-🇸🇦┇ اذاعه للكل بالتوجيه ↫ بالرد
+🇸🇦┇ اذاعة للكل بالتوجيه ↫ بالرد
 ●━─━─━🇸🇦━─━─━●
 🇸🇦┇ تفعيل ملف + اسم الملف
 🇸🇦┇ تعطيل ملف + اسم الملف
 🇸🇦┇ تفعيل • تعطيل + الامر ↫ ⤈
-🇸🇦┇ الاذاعه • الاشتراك الاجباري
+🇸🇦┇ الاذاعة • الاشتراك الاجباري
 🇸🇦┇ ترحيب البوت • المغادره
 🇸🇦┇ البوت الخدمي • التواصل
 ●━─━─━🇸🇦━─━─━●
