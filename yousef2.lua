@@ -971,9 +971,9 @@ if DevAli:sismember(yousef2..'Ali:Tkeed:'..Chat_Id2, data.sender_user_id_) then
 HTTPS.request("https://api.telegram.org/bot"..TokenBot.."/restrictChatMember?chat_id="..Chat_Id2.."&user_id="..data.sender_user_id_.."&can_send_messages=True&can_send_media_messages=True&can_send_other_messages=True&can_add_web_page_previews=True")
 DevAli:srem(yousef2..'Ali:Tkeed:'..Chat_Id2, data.sender_user_id_)
 DeleteMessage(Chat_Id2,{[0] = MsgId2})
-return https.request("https://api.telegram.org/bot"..TokenBot..'/answercallbackquery?callback_query_id='..data.id_..'&text='..URL.escape("♪ تم الغاء تقيدك من المجموعة بنجاح .")..'&show_alert=true')
+return https.request("https://api.telegram.org/bot"..TokenBot..'/answercallbackquery?callback_query_id='..data.id_..'&text='..URL.escape("♥️ تم الغاء تقيدك من المجموعة بنجاح .")..'&show_alert=true')
 else
-return https.request("https://api.telegram.org/bot"..TokenBot..'/answercallbackquery?callback_query_id='..data.id_..'&text='..URL.escape("♪ عذرا هذا الامر لكشف الروبوت وليس لك .")..'&show_alert=true')
+return https.request("https://api.telegram.org/bot"..TokenBot..'/answercallbackquery?callback_query_id='..data.id_..'&text='..URL.escape("♥️ عذرا هذا الامر لكشف الروبوت وليس لك .")..'&show_alert=true')
 end 
 end
 if DataText and DataText:match('/DelRed:'..tonumber(data.sender_user_id_)..'(.*)') then
@@ -1009,7 +1009,7 @@ local Abbs = DataText:match('/HideHelpList:(.*)')
 if tonumber(Abbs) == tonumber(data.sender_user_id_) then
 EditMsg(Chat_Id2, Msg_Id2, "🇸🇦┇ تم اخفاء رسالة الاوامر") 
 else
-return https.request("https://api.telegram.org/bot"..TokenBot..'/answercallbackquery?callback_query_id='..data.id_..'&text='..URL.escape("♪ عذرا الامر ليس لك .")..'&show_alert=true')
+return https.request("https://api.telegram.org/bot"..TokenBot..'/answercallbackquery?callback_query_id='..data.id_..'&text='..URL.escape("♥️ عذرا الامر ليس لك .")..'&show_alert=true')
 end
 end
 if DataText and DataText:match('/HelpList:(.*)') then
@@ -1032,14 +1032,14 @@ keyboard = {}
 keyboard.inline_keyboard = {{{text="اوامر الادامن",callback_data="/HelpList2:"..data.sender_user_id_},{text="اوامر الحماية",callback_data="/HelpList1:"..data.sender_user_id_}},{{text="اوامر المنشئين",callback_data="/HelpList4:"..data.sender_user_id_},{text="اوامر المدراء",callback_data="/HelpList3:"..data.sender_user_id_}},{{text="اوامر الاعضاء",callback_data="/HelpList6:"..data.sender_user_id_},{text="اوامر المطورين",callback_data="/HelpList5:"..data.sender_user_id_}},{{text="• اخفاء الرسالة •",callback_data="/HideHelpList:"..data.sender_user_id_}}}
 return https.request("https://api.telegram.org/bot"..TokenBot..'/editMessageText?chat_id='..Chat_Id2..'&message_id='..Msg_Id2..'&text=' .. URL.escape(Help or Text).."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 else
-return https.request("https://api.telegram.org/bot"..TokenBot..'/answercallbackquery?callback_query_id='..data.id_..'&text='..URL.escape("♪ عذرا الامر ليس لك .")..'&show_alert=true')
+return https.request("https://api.telegram.org/bot"..TokenBot..'/answercallbackquery?callback_query_id='..data.id_..'&text='..URL.escape("♥️ عذرا الامر ليس لك .")..'&show_alert=true')
 end
 end
 if DataText and DataText:match('/HelpList1:(.*)') then
 local Abbs = DataText:match('/HelpList1:(.*)')
 if tonumber(Abbs) == tonumber(data.sender_user_id_) then
 if not Admin(data) then
-return https.request("https://api.telegram.org/bot"..TokenBot..'/answercallbackquery?callback_query_id='..data.id_..'&text='..URL.escape("♪ عذرا ليس لديك صلاحية التحكم لهذا الامر .")..'&show_alert=true')
+return https.request("https://api.telegram.org/bot"..TokenBot..'/answercallbackquery?callback_query_id='..data.id_..'&text='..URL.escape("♥️ عذرا ليس لديك صلاحية التحكم لهذا الامر .")..'&show_alert=true')
 end
 local Help = DevAli:get(yousef2..'Ali:Help1')
 local Text = [[
@@ -1095,14 +1095,14 @@ keyboard = {}
 keyboard.inline_keyboard = {{{text="اوامر الادامن",callback_data="/HelpList2:"..data.sender_user_id_}},{{text="اوامر المنشئين",callback_data="/HelpList4:"..data.sender_user_id_},{text="اوامر المدراء",callback_data="/HelpList3:"..data.sender_user_id_}},{{text="اوامر الاعضاء",callback_data="/HelpList6:"..data.sender_user_id_},{text="اوامر المطورين",callback_data="/HelpList5:"..data.sender_user_id_}},{{text="• اخفاء الرسالة •",callback_data="/HideHelpList:"..data.sender_user_id_}},{{text="• رجوع •",callback_data="/HelpList:"..data.sender_user_id_}}}
 return https.request("https://api.telegram.org/bot"..TokenBot..'/editMessageText?chat_id='..Chat_Id2..'&message_id='..Msg_Id2..'&text=' .. URL.escape(Help or Text).."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 else
-return https.request("https://api.telegram.org/bot"..TokenBot..'/answercallbackquery?callback_query_id='..data.id_..'&text='..URL.escape("♪ عذرا الامر ليس لك .")..'&show_alert=true')
+return https.request("https://api.telegram.org/bot"..TokenBot..'/answercallbackquery?callback_query_id='..data.id_..'&text='..URL.escape("♥️ عذرا الامر ليس لك .")..'&show_alert=true')
 end
 end
 if DataText and DataText:match('/HelpList2:(.*)') then
 local Abbs = DataText:match('/HelpList2:(.*)')
 if tonumber(Abbs) == tonumber(data.sender_user_id_) then
 if not Admin(data) then
-return https.request("https://api.telegram.org/bot"..TokenBot..'/answercallbackquery?callback_query_id='..data.id_..'&text='..URL.escape("♪ عذرا ليس لديك صلاحية التحكم لهذا الامر .")..'&show_alert=true')
+return https.request("https://api.telegram.org/bot"..TokenBot..'/answercallbackquery?callback_query_id='..data.id_..'&text='..URL.escape("♥️ عذرا ليس لديك صلاحية التحكم لهذا الامر .")..'&show_alert=true')
 end
 local Help = DevAli:get(yousef2..'Ali:Help2')
 local Text = [[
@@ -1165,14 +1165,14 @@ keyboard = {}
 keyboard.inline_keyboard = {{{text="اوامر الحماية",callback_data="/HelpList1:"..data.sender_user_id_}},{{text="اوامر المنشئين",callback_data="/HelpList4:"..data.sender_user_id_},{text="اوامر المدراء",callback_data="/HelpList3:"..data.sender_user_id_}},{{text="اوامر الاعضاء",callback_data="/HelpList6:"..data.sender_user_id_},{text="اوامر المطورين",callback_data="/HelpList5:"..data.sender_user_id_}},{{text="• اخفاء الرسالة •",callback_data="/HideHelpList:"..data.sender_user_id_}},{{text="• رجوع •",callback_data="/HelpList:"..data.sender_user_id_}}}
 return https.request("https://api.telegram.org/bot"..TokenBot..'/editMessageText?chat_id='..Chat_Id2..'&message_id='..Msg_Id2..'&text=' .. URL.escape(Help or Text).."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 else
-return https.request("https://api.telegram.org/bot"..TokenBot..'/answercallbackquery?callback_query_id='..data.id_..'&text='..URL.escape("♪ عذرا الامر ليس لك .")..'&show_alert=true')
+return https.request("https://api.telegram.org/bot"..TokenBot..'/answercallbackquery?callback_query_id='..data.id_..'&text='..URL.escape("♥️ عذرا الامر ليس لك .")..'&show_alert=true')
 end
 end
 if DataText and DataText:match('/HelpList3:(.*)') then
 local Abbs = DataText:match('/HelpList3:(.*)')
 if tonumber(Abbs) == tonumber(data.sender_user_id_) then
 if not Admin(data) then
-return https.request("https://api.telegram.org/bot"..TokenBot..'/answercallbackquery?callback_query_id='..data.id_..'&text='..URL.escape("♪ عذرا ليس لديك صلاحية التحكم لهذا الامر .")..'&show_alert=true')
+return https.request("https://api.telegram.org/bot"..TokenBot..'/answercallbackquery?callback_query_id='..data.id_..'&text='..URL.escape("♥️ عذرا ليس لديك صلاحية التحكم لهذا الامر .")..'&show_alert=true')
 end
 local Help = DevAli:get(yousef2..'Ali:Help3')
 local Text = [[
@@ -1224,14 +1224,14 @@ keyboard = {}
 keyboard.inline_keyboard = {{{text="اوامر الادامن",callback_data="/HelpList2:"..data.sender_user_id_},{text="اوامر الحماية",callback_data="/HelpList1:"..data.sender_user_id_}},{{text="اوامر المنشئين",callback_data="/HelpList4:"..data.sender_user_id_}},{{text="اوامر الاعضاء",callback_data="/HelpList6:"..data.sender_user_id_},{text="اوامر المطورين",callback_data="/HelpList5:"..data.sender_user_id_}},{{text="• اخفاء الرسالة •",callback_data="/HideHelpList:"..data.sender_user_id_}},{{text="• رجوع •",callback_data="/HelpList:"..data.sender_user_id_}}}
 return https.request("https://api.telegram.org/bot"..TokenBot..'/editMessageText?chat_id='..Chat_Id2..'&message_id='..Msg_Id2..'&text=' .. URL.escape(Help or Text).."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 else
-return https.request("https://api.telegram.org/bot"..TokenBot..'/answercallbackquery?callback_query_id='..data.id_..'&text='..URL.escape("♪ عذرا الامر ليس لك .")..'&show_alert=true')
+return https.request("https://api.telegram.org/bot"..TokenBot..'/answercallbackquery?callback_query_id='..data.id_..'&text='..URL.escape("♥️ عذرا الامر ليس لك .")..'&show_alert=true')
 end
 end
 if DataText and DataText:match('/HelpList4:(.*)') then
 local Abbs = DataText:match('/HelpList4:(.*)')
 if tonumber(Abbs) == tonumber(data.sender_user_id_) then
 if not Admin(data) then
-return https.request("https://api.telegram.org/bot"..TokenBot..'/answercallbackquery?callback_query_id='..data.id_..'&text='..URL.escape("♪ عذرا ليس لديك صلاحية التحكم لهذا الامر .")..'&show_alert=true')
+return https.request("https://api.telegram.org/bot"..TokenBot..'/answercallbackquery?callback_query_id='..data.id_..'&text='..URL.escape("♥️ عذرا ليس لديك صلاحية التحكم لهذا الامر .")..'&show_alert=true')
 end
 local Help = DevAli:get(yousef2..'Ali:Help4')
 local Text = [[
@@ -1277,14 +1277,14 @@ keyboard = {}
 keyboard.inline_keyboard = {{{text="اوامر الادامن",callback_data="/HelpList2:"..data.sender_user_id_},{text="اوامر الحماية",callback_data="/HelpList1:"..data.sender_user_id_}},{{text="اوامر المدراء",callback_data="/HelpList3:"..data.sender_user_id_}},{{text="اوامر الاعضاء",callback_data="/HelpList6:"..data.sender_user_id_},{text="اوامر المطورين",callback_data="/HelpList5:"..data.sender_user_id_}},{{text="• اخفاء الرسالة •",callback_data="/HideHelpList:"..data.sender_user_id_}},{{text="• رجوع •",callback_data="/HelpList:"..data.sender_user_id_}}}
 return https.request("https://api.telegram.org/bot"..TokenBot..'/editMessageText?chat_id='..Chat_Id2..'&message_id='..Msg_Id2..'&text=' .. URL.escape(Help or Text).."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 else
-return https.request("https://api.telegram.org/bot"..TokenBot..'/answercallbackquery?callback_query_id='..data.id_..'&text='..URL.escape("♪ عذرا الامر ليس لك .")..'&show_alert=true')
+return https.request("https://api.telegram.org/bot"..TokenBot..'/answercallbackquery?callback_query_id='..data.id_..'&text='..URL.escape("♥️ عذرا الامر ليس لك .")..'&show_alert=true')
 end
 end
 if DataText and DataText:match('/HelpList5:(.*)') then
 local Abbs = DataText:match('/HelpList5:(.*)')
 if tonumber(Abbs) == tonumber(data.sender_user_id_) then
 if not Admin(data) then
-return https.request("https://api.telegram.org/bot"..TokenBot..'/answercallbackquery?callback_query_id='..data.id_..'&text='..URL.escape("♪ عذرا ليس لديك صلاحية التحكم لهذا الامر .")..'&show_alert=true')
+return https.request("https://api.telegram.org/bot"..TokenBot..'/answercallbackquery?callback_query_id='..data.id_..'&text='..URL.escape("♥️ عذرا ليس لديك صلاحية التحكم لهذا الامر .")..'&show_alert=true')
 end
 local Help = DevAli:get(yousef2..'Ali:Help5')
 local Text = [[
@@ -1357,7 +1357,7 @@ keyboard = {}
 keyboard.inline_keyboard = {{{text="اوامر الادامن",callback_data="/HelpList2:"..data.sender_user_id_},{text="اوامر الحماية",callback_data="/HelpList1:"..data.sender_user_id_}},{{text="اوامر المنشئين",callback_data="/HelpList4:"..data.sender_user_id_},{text="اوامر المدراء",callback_data="/HelpList3:"..data.sender_user_id_}},{{text="اوامر الاعضاء",callback_data="/HelpList6:"..data.sender_user_id_}},{{text="• اخفاء الرسالة •",callback_data="/HideHelpList:"..data.sender_user_id_}},{{text="• رجوع •",callback_data="/HelpList:"..data.sender_user_id_}}}
 return https.request("https://api.telegram.org/bot"..TokenBot..'/editMessageText?chat_id='..Chat_Id2..'&message_id='..Msg_Id2..'&text=' .. URL.escape(Help or Text).."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 else
-return https.request("https://api.telegram.org/bot"..TokenBot..'/answercallbackquery?callback_query_id='..data.id_..'&text='..URL.escape("♪ عذرا الامر ليس لك .")..'&show_alert=true')
+return https.request("https://api.telegram.org/bot"..TokenBot..'/answercallbackquery?callback_query_id='..data.id_..'&text='..URL.escape("♥️ عذرا الامر ليس لك .")..'&show_alert=true')
 end
 end
 if DataText and DataText:match('/HelpList6:(.*)') then
@@ -1398,7 +1398,7 @@ keyboard = {}
 keyboard.inline_keyboard = {{{text="اوامر الادامن",callback_data="/HelpList2:"..data.sender_user_id_},{text="اوامر الحماية",callback_data="/HelpList1:"..data.sender_user_id_}},{{text="اوامر المنشئين",callback_data="/HelpList4:"..data.sender_user_id_},{text="اوامر المدراء",callback_data="/HelpList3:"..data.sender_user_id_}},{{text="اوامر المطورين",callback_data="/HelpList5:"..data.sender_user_id_}},{{text="• اخفاء الرسالة •",callback_data="/HideHelpList:"..data.sender_user_id_}},{{text="• رجوع •",callback_data="/HelpList:"..data.sender_user_id_}}}
 return https.request("https://api.telegram.org/bot"..TokenBot..'/editMessageText?chat_id='..Chat_Id2..'&message_id='..Msg_Id2..'&text=' .. URL.escape(Help or Text).."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 else
-return https.request("https://api.telegram.org/bot"..TokenBot..'/answercallbackquery?callback_query_id='..data.id_..'&text='..URL.escape("♪ عذرا الامر ليس لك .")..'&show_alert=true')
+return https.request("https://api.telegram.org/bot"..TokenBot..'/answercallbackquery?callback_query_id='..data.id_..'&text='..URL.escape("♥️ عذرا الامر ليس لك .")..'&show_alert=true')
 end
 end
 end
@@ -1728,25 +1728,25 @@ if text == '/start' or text == 'رجوع ،🔙‘' then
 if SecondSudo(msg) then 
 local Sudo_Welcome = '🇸🇦┇ مرحبا عزيزي المطور \n🇸🇦┇ انت المطور الاساسي هنا \n🇸🇦┇ اليك ازرار سورس يوسف \n🇸🇦┇ تستطيع التحكم بكل الاوامر فقط اضغط على الامر الذي تريد تنفيذه'
 local key = {
-{'وضع اسم البوت','↫ تحديث ♪','وضع رسالة المطور'},
-{'↫ المطورين ♪','↫ الاحصائيات ♪'},
-{'↫ المجموعات ♪','روابط القروبات','↫ المشتركين ♪'},
-{'↫ تعطيل التواصل ♪','↫ تفعيل التواصل ♪'},
-{'تنظيف القروبات','↫ قائمه العام ♪','تنظيف المشتركين'},
-{'↫ تغير المطور الاساسي ♪'},
+{'وضع اسم البوت','↫ تحديث ♥️','وضع رسالة المطور'},
+{'↫ المطورين ♥️','↫ الاحصائيات ♥️'},
+{'↫ المجموعات ♥️','روابط القروبات','↫ المشتركين ♥️'},
+{'↫ تعطيل التواصل ♥️','↫ تفعيل التواصل ♥️'},
+{'تنظيف القروبات','↫ قائمه العام ♥️','تنظيف المشتركين'},
+{'↫ تغير المطور الاساسي ♥️'},
 {'تعطيل ترحيب البوت','تفعيل ترحيب البوت'},
-{'↫ تغير معلومات الترحيب ♪'},
-{'↫ تعطيل المغادره ♪','↫ تفعيل المغادره ♪'},
-{'↫ تعطيل الاذاعة ♪','↫ تفعيل الاذاعة ♪'},
-{'↫ اذاعة بالتثبيت ♪'},
-{'↫ اذاعة عام ♪','↫ اذاعة خاص ♪'},
-{'↫ اذاعة عام بالتوجيه ♪','↫ اذاعة خاص بالتوجيه ♪'},
+{'↫ تغير معلومات الترحيب ♥️'},
+{'↫ تعطيل المغادره ♥️','↫ تفعيل المغادره ♥️'},
+{'↫ تعطيل الاذاعة ♥️','↫ تفعيل الاذاعة ♥️'},
+{'↫ اذاعة بالتثبيت ♥️'},
+{'↫ اذاعة عام ♥️','↫ اذاعة خاص ♥️'},
+{'↫ اذاعة عام بالتوجيه ♥️','↫ اذاعة خاص بالتوجيه ♥️'},
 {'~ تعيين رسائل الاوامر ~'},
 {'تعطيل البوت الخدمي','تفعيل البوت الخدمي'},
 {'جلب نسخة السورس','تحديث السورس','جلب نسخة القروبات'},
 {'تحديث المتجر'},
-{'↫ حذف رد عام ♪','↫ الردود العام ♪','↫ اضف رد عام ♪'},
-{'↫ حذف رد الخاص ♪','↫ تعيين رد الخاص ♪'},
+{'↫ حذف رد عام ♥️','↫ الردود العام ♥️','↫ اضف رد عام ♥️'},
+{'↫ حذف رد الخاص ♥️','↫ تعيين رد الخاص ♥️'},
 {'حذف قناة الاشتراك','قناة الاشتراك','تعيين قناة الاشتراك'},
 {'حذف رسالة الاشتراك','رسالة الاشتراك','تغير رسالة الاشتراك'},
 }
@@ -1770,7 +1770,7 @@ end end
 if text == '/start' and ChCheck(msg) then  
 if not DevAli:get(yousef2..'Ali:Start:Time'..msg.sender_user_id_) then
 tdcli_function({ID="GetUser",user_id_=DevId},function(arg,dp) 
-local inline = {{{text="♪ المطور .",url="t.me/"..(dp.username_ or "yousef_labban1")}}}
+local inline = {{{text="♥️ المطور .",url="t.me/"..(dp.username_ or "yousef_labban1")}}}
 local start = DevAli:get(yousef2.."Ali:Start:Bot")
 if start then 
 Start_Source = start
@@ -1854,12 +1854,12 @@ DevAli:del(yousef2..'Ali:Start:Bots'..msg.sender_user_id_)
 return false
 end
 if SecondSudo(msg) then
-if text == 'تعيين رد الخاص' or text == 'ضع رسالة ستارت' or text == '↫ تعيين رد الخاص ♪' then 
+if text == 'تعيين رد الخاص' or text == 'ضع رسالة ستارت' or text == '↫ تعيين رد الخاص ♥️' then 
 DevAli:set(yousef2..'Ali:Start:Bots'..msg.sender_user_id_,true) 
 Dev_Ali(msg.chat_id_, msg.id_, 1, '🇸🇦┇ ارسل لي رسالة الستارت الان', 1, 'md')
 return false
 end
-if text == 'حذف رد الخاص' or text == 'حذف رسالة ستارت' or text == '↫ حذف رد الخاص ♪' then 
+if text == 'حذف رد الخاص' or text == 'حذف رسالة ستارت' or text == '↫ حذف رد الخاص ♥️' then 
 DevAli:del(yousef2..'Start:Bot') 
 Dev_Ali(msg.chat_id_, msg.id_, 1, '🇸🇦┇ تم حذف رسالة الستارت بنجاح', 1, 'md')
 end
@@ -1873,12 +1873,12 @@ end
 Dev_Ali(msg.chat_id_, msg.id_, 1, Start_Source, 1, 'md')
 return false
 end
-if text == 'تفعيل التواصل' or text == '↫ تفعيل التواصل ♪' then   
+if text == 'تفعيل التواصل' or text == '↫ تفعيل التواصل ♥️' then   
 local yousef2TEAM = '🇸🇦┇ اهلا عزيزي ↫ '..AliRank(msg)..' \n🇸🇦┇ تم تفعيل التواصل بنجاح'
 alimoned(msg.chat_id_, msg.sender_user_id_, msg.id_, yousef2TEAM, 14, string.len(msg.sender_user_id_))
 DevAli:del(yousef2..'Ali:Texting:Pv') 
 end
-if text == 'تعطيل التواصل' or text == '↫ تعطيل التواصل ♪' then  
+if text == 'تعطيل التواصل' or text == '↫ تعطيل التواصل ♥️' then  
 local yousef2TEAM = '🇸🇦┇ اهلا عزيزي ↫ '..AliRank(msg)..' \n🇸🇦┇ تم تعطيل التواصل بنجاح'
 alimoned(msg.chat_id_, msg.sender_user_id_, msg.id_, yousef2TEAM, 14, string.len(msg.sender_user_id_))
 DevAli:set(yousef2..'Ali:Texting:Pv',true) 
@@ -1907,7 +1907,7 @@ keyboard.inline_keyboard = {
 {{text="🔵 Color Game 🔴",url='https://t.me/T4TTTTBOT?game=color'}},
 {{text="🚀 Rocket Game 🚀",url='https://t.me/T4TTTTBOT?game=rocket'},{text="🏹 لعبة السهام 🏹",url='https://t.me/T4TTTTBOT?game=arrow'}},
 {{text="لعبة النينجا",url='https://t.me/gamee?game=GravityNinja21'},{text="لعبة الكرتي",url='https://t.me/gamee?game=KarateKid2'}},
-{{text = '♪ yousef .', url="t.me/zvzzzz"}},
+{{text = '♥️ yousef .', url="t.me/zvzzzz"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..TokenBot..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
@@ -4255,10 +4255,10 @@ Welcome To Source
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '♪ قناة البوت',url="https://Yousef_Labban1"}},
-{{text = '♪ Exp Source',url="https://Yousef_Labban1"}},
-{{text = '♪ Developer',url="https://Yousef_Labban"}},
-{{text = '♪ Tws yousef2',url="https://t.me/Mhsliem15bot"}},
+{{text = '♥️ قناة البوت',url="https://Yousef_Labban1"}},
+{{text = '♥️ Exp Source',url="https://Yousef_Labban1"}},
+{{text = '♥️ Developer',url="https://Yousef_Labban"}},
+{{text = '♥️ Tws yousef2',url="https://t.me/Mhsliem15bot"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..TokenBot..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
@@ -4408,7 +4408,7 @@ if text == "ايدي المجموعة" and ChCheck(msg) then Dev_Ali(msg.chat_id
 if text == 'مسح تعديلاتي' or text == 'مسح تعديلاتي' or text == 'حذف تعديلاتي' or text == 'حذف تعديلاتي' then DevAli:del(yousef2..'Ali:EditMsg'..msg.chat_id_..msg.sender_user_id_) Dev_Ali(msg.chat_id_, msg.id_, 1, '🇸🇦┇ تم حذف جميع تعديلاتك بنجاح' , 1, 'md') end
 if text == 'مسح جهاتي' or text == 'مسح اضافاتي' or text == 'حذف جهاتي' or text == 'حذف اضافاتي' then DevAli:del(yousef2..'Ali:ContactNumber'..msg.chat_id_..':'..msg.sender_user_id_) Dev_Ali(msg.chat_id_, msg.id_, 1, '🇸🇦┇ تم حذف جميع جهاتك المضافة' , 1, 'md') end
 --     Source yousef2     --
-if text and (text == 'المطور' or text == 'مطور' or text == '↫  المطور ♪') and not DevAli:get(yousef2..'Ali:Devinline:Pv'..msg.chat_id_) then
+if text and (text == 'المطور' or text == 'مطور' or text == '↫  المطور ♥️') and not DevAli:get(yousef2..'Ali:Devinline:Pv'..msg.chat_id_) then
 tdcli_function({ID="GetUser",user_id_=DevId},function(arg,result)
 local msg_id = msg.id_/2097152/0.5
 Text = "*🇸🇦┇ Dev Name ↬ * ["..result.first_name_.."](T.me/"..result.username_..")\n*🇸🇦┇ Dev User ↬* [@"..result.username_.."]"
@@ -6139,7 +6139,7 @@ end
 end
 end
 --     Source yousef2     --
-if (text == "تغير المطور الاساسي" or text == "نقل ملكيه البوت" or text == "تغيير المطور الاساسي" or text == "↫ تغير المطور الاساسي ♪") and msg.reply_to_message_id_ == 0 and Sudo(msg) then 
+if (text == "تغير المطور الاساسي" or text == "نقل ملكيه البوت" or text == "تغيير المطور الاساسي" or text == "↫ تغير المطور الاساسي ♥️") and msg.reply_to_message_id_ == 0 and Sudo(msg) then 
 send(msg.chat_id_, msg.id_,'🇸🇦┇ يجب التاكد ان المطور الجديد ارسل start لخاص البوت بعد ذلك يمكنك ارسال ايدي المطور')
 DevAli:setex(yousef2.."Ali:EditDev"..msg.sender_user_id_,300,true)
 end
@@ -6537,7 +6537,7 @@ Dev_Ali(msg.chat_id_, msg.id_, 1, text, 1, "md")
 end 
 --     Source yousef2     --
 if SudoBot(msg) then
-if text == "قائمه العام" and ChCheck(msg) or text == "المحظورين عام" and ChCheck(msg) or text == "المكتومين عام" and ChCheck(msg) or text == "↫ قائمه العام ♪" and ChCheck(msg) then 
+if text == "قائمه العام" and ChCheck(msg) or text == "المحظورين عام" and ChCheck(msg) or text == "المكتومين عام" and ChCheck(msg) or text == "↫ قائمه العام ♥️" and ChCheck(msg) then 
 local BanAll = DevAli:smembers(yousef2..'Ali:BanAll:')
 local MuteAll = DevAli:smembers(yousef2..'Ali:MuteAll:')
 if #BanAll ~= 0 then 
@@ -6572,7 +6572,7 @@ end
 Dev_Ali(msg.chat_id_, msg.id_, 1, text, 1, "md")
 end 
 --     Source yousef2     --
-if text == "المطورين" and ChCheck(msg) or text == "↫ المطورين ♪" and ChCheck(msg) then 
+if text == "المطورين" and ChCheck(msg) or text == "↫ المطورين ♥️" and ChCheck(msg) then 
 local List = DevAli:smembers(yousef2..'Ali:SudoBot:')
 text = "🇸🇦┇ قائمة المطورين ↫ ⤈ \n●━─━─━🇸🇦━─━─━●\n"
 for k,v in pairs(List) do
@@ -7547,15 +7547,15 @@ return false
 end
 --     Source yousef2     --
 if SudoBot(msg) then
-if text and text == "الاحصائيات" and ChCheck(msg) or text and text == "↫ الاحصائيات ♪" then
+if text and text == "الاحصائيات" and ChCheck(msg) or text and text == "↫ الاحصائيات ♥️" then
 local gps = DevAli:scard(yousef2.."Ali:Groups") local users = DevAli:scard(yousef2.."Ali:Users") 
 Dev_Ali(msg.chat_id_, msg.id_, 1, '🇸🇦┇ احصائيات البوت ↫ ⤈\n🇸🇦┇ عدد المشتركين ↫ ❨ '..users..' ❩\n🇸🇦┇ عدد المجموعات ↫ ❨ '..gps..' ❩', 1, 'md')
 end
-if text and text == "المشتركين" and ChCheck(msg) or text and text == "↫ المشتركين ♪" then
+if text and text == "المشتركين" and ChCheck(msg) or text and text == "↫ المشتركين ♥️" then
 local users = DevAli:scard(yousef2.."Ali:Users")
 Dev_Ali(msg.chat_id_, msg.id_, 1, '🇸🇦┇ عدد المشتركين ↫ ❨ '..users..' ❩', 1, 'md')
 end
-if text and text == "المجموعات" and ChCheck(msg) or text and text == "↫ المجموعات ♪" then
+if text and text == "المجموعات" and ChCheck(msg) or text and text == "↫ المجموعات ♥️" then
 local gps = DevAli:scard(yousef2.."Ali:Groups")
 Dev_Ali(msg.chat_id_, msg.id_, 1, '🇸🇦┇ عدد المجموعات ↫ ❨ '..gps..' ❩', 1, 'md')
 end
@@ -8901,7 +8901,7 @@ if Audios.Info == true then
 local Text ='🇸🇦┇ تم اختيار المقطع الصوتي لك'
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '♪ yousef .',url="Yousef_Labban1"}},
+{{text = '♥️ yousef .',url="Yousef_Labban1"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..TokenBot..'/sendVoice?chat_id='..msg.chat_id_..'&voice='..URL.escape(Audios.info)..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
@@ -8995,22 +8995,22 @@ DevAli:set(yousef2..'Ali:Lock:AllRed'..msg.chat_id_,true)
 end
 --     Source yousef2     --
 if SecondSudo(msg) then
-if text == 'تفعيل المغادره' or text == '↫ تفعيل المغادره ♪' then 
+if text == 'تفعيل المغادره' or text == '↫ تفعيل المغادره ♥️' then 
 local yousef2TEAM = '🇸🇦┇ اهلا عزيزي ↫ '..AliRank(msg)..' \n🇸🇦┇ تم تفعيل المغادره بنجاح'
 alimoned(msg.chat_id_, msg.sender_user_id_, msg.id_, yousef2TEAM, 14, string.len(msg.sender_user_id_))
 DevAli:del(yousef2.."Ali:Left:Bot"..yousef2)
 end
-if text == 'تعطيل المغادره' or text == '↫ تعطيل المغادره ♪' then 
+if text == 'تعطيل المغادره' or text == '↫ تعطيل المغادره ♥️' then 
 local yousef2TEAM = '🇸🇦┇ اهلا عزيزي ↫ '..AliRank(msg)..' \n🇸🇦┇ تم تعطيل المغادره بنجاح'
 alimoned(msg.chat_id_, msg.sender_user_id_, msg.id_, yousef2TEAM, 14, string.len(msg.sender_user_id_))
 DevAli:set(yousef2.."Ali:Left:Bot"..yousef2,true) 
 end 
-if text == 'تفعيل الاذاعة' or text == '↫ تفعيل الاذاعة ♪' then 
+if text == 'تفعيل الاذاعة' or text == '↫ تفعيل الاذاعة ♥️' then 
 local yousef2TEAM = '🇸🇦┇ اهلا عزيزي ↫ '..AliRank(msg)..' \n🇸🇦┇ تم تفعيل الاذاعة بنجاح'
 alimoned(msg.chat_id_, msg.sender_user_id_, msg.id_, yousef2TEAM, 14, string.len(msg.sender_user_id_))
 DevAli:del(yousef2.."Ali:Send:Bot"..yousef2)
 end
-if text == 'تعطيل الاذاعة' or text == '↫ تعطيل الاذاعة ♪' then 
+if text == 'تعطيل الاذاعة' or text == '↫ تعطيل الاذاعة ♥️' then 
 local yousef2TEAM = '🇸🇦┇ اهلا عزيزي ↫ '..AliRank(msg)..' \n🇸🇦┇ تم تعطيل الاذاعة بنجاح'
 alimoned(msg.chat_id_, msg.sender_user_id_, msg.id_, yousef2TEAM, 14, string.len(msg.sender_user_id_))
 DevAli:set(yousef2.."Ali:Send:Bot"..yousef2,true) 
@@ -9462,7 +9462,7 @@ end
 end
 end
 --     Source yousef2     --
-if text == "اذاعة خاص" and msg.reply_to_message_id_ == 0 and SudoBot(msg) or text == "↫ اذاعة خاص ♪" and msg.reply_to_message_id_ == 0 and SudoBot(msg) then 
+if text == "اذاعة خاص" and msg.reply_to_message_id_ == 0 and SudoBot(msg) or text == "↫ اذاعة خاص ♥️" and msg.reply_to_message_id_ == 0 and SudoBot(msg) then 
 if DevAli:get(yousef2.."Ali:Send:Bot"..yousef2) and not SecondSudo(msg) then 
 send(msg.chat_id_, msg.id_,"🇸🇦┇ الاذاعة معطله من قبل المطور الاساسي")
 return false
@@ -9529,7 +9529,7 @@ Dev_Ali(msg.chat_id_, msg.id_, 1, "🇸🇦┇ تم اذاعة "..AliText.." ب�
 DevAli:del(yousef2.."Ali:Send:Pv"..msg.chat_id_..":" .. msg.sender_user_id_) 
 end
 --     Source yousef2     --
-if text == "اذاعة" and msg.reply_to_message_id_ == 0 and SudoBot(msg) or text == "↫ اذاعة عام ♪" and msg.reply_to_message_id_ == 0 and SudoBot(msg) then 
+if text == "اذاعة" and msg.reply_to_message_id_ == 0 and SudoBot(msg) or text == "↫ اذاعة عام ♥️" and msg.reply_to_message_id_ == 0 and SudoBot(msg) then 
 if DevAli:get(yousef2.."Ali:Send:Bot"..yousef2) and not SecondSudo(msg) then 
 send(msg.chat_id_, msg.id_,"🇸🇦┇ الاذاعة معطله من قبل المطور الاساسي")
 return false
@@ -9596,7 +9596,7 @@ Dev_Ali(msg.chat_id_, msg.id_, 1, "🇸🇦┇ تم اذاعة "..AliText.." ب�
 DevAli:del(yousef2.."Ali:Send:Gp"..msg.chat_id_..":" .. msg.sender_user_id_) 
 end
 --     Source yousef2     --
-if text == "اذاعة بالتوجيه" and msg.reply_to_message_id_ == 0 and SudoBot(msg) or text == "↫ اذاعة عام بالتوجيه ♪" and msg.reply_to_message_id_ == 0 and SudoBot(msg) then 
+if text == "اذاعة بالتوجيه" and msg.reply_to_message_id_ == 0 and SudoBot(msg) or text == "↫ اذاعة عام بالتوجيه ♥️" and msg.reply_to_message_id_ == 0 and SudoBot(msg) then 
 if DevAli:get(yousef2.."Ali:Send:Bot"..yousef2) and not SecondSudo(msg) then 
 send(msg.chat_id_, msg.id_,"🇸🇦┇ الاذاعة معطله من قبل المطور الاساسي")
 return false
@@ -9620,7 +9620,7 @@ Dev_Ali(msg.chat_id_, msg.id_, 1, "🇸🇦┇ تم اذاعة رسالتك با
 DevAli:del(yousef2.."Ali:Send:FwdGp"..msg.chat_id_..":" .. msg.sender_user_id_) 
 end
 --     Source yousef2     --
-if text == "اذاعة خاص بالتوجيه" and msg.reply_to_message_id_ == 0 and SudoBot(msg) or text == "↫ اذاعة خاص بالتوجيه ♪" and msg.reply_to_message_id_ == 0 and SudoBot(msg) then 
+if text == "اذاعة خاص بالتوجيه" and msg.reply_to_message_id_ == 0 and SudoBot(msg) or text == "↫ اذاعة خاص بالتوجيه ♥️" and msg.reply_to_message_id_ == 0 and SudoBot(msg) then 
 if DevAli:get(yousef2.."Ali:Send:Bot"..yousef2) and not SecondSudo(msg) then 
 send(msg.chat_id_, msg.id_,"🇸🇦┇ الاذاعة معطله من قبل المطور الاساسي")
 return false
@@ -9644,7 +9644,7 @@ Dev_Ali(msg.chat_id_, msg.id_, 1, "🇸🇦┇ تم اذاعة رسالتك با
 DevAli:del(yousef2.."Ali:Send:FwdPv"..msg.chat_id_..":" .. msg.sender_user_id_) 
 end
 --     Source yousef2     --
-if text == "اذاعة بالتثبيت" and msg.reply_to_message_id_ == 0 and SudoBot(msg) or text == "↫ اذاعة بالتثبيت ♪" and msg.reply_to_message_id_ == 0 and SudoBot(msg) then 
+if text == "اذاعة بالتثبيت" and msg.reply_to_message_id_ == 0 and SudoBot(msg) or text == "↫ اذاعة بالتثبيت ♥️" and msg.reply_to_message_id_ == 0 and SudoBot(msg) then 
 if DevAli:get(yousef2.."Ali:Send:Bot"..yousef2) and not SecondSudo(msg) then 
 send(msg.chat_id_, msg.id_,"🇸🇦┇ الاذاعة معطله من قبل المطور الاساسي")
 return false
@@ -9817,7 +9817,7 @@ DevAli:set(yousef2..'DelManagerRep'..msg.chat_id_,text)
 return false
 end end
 --     Source yousef2     --
-if text == 'حذف رد عام' and SecondSudo(msg) or text == '↫ حذف رد عام ♪' and SecondSudo(msg) or text == 'مسح رد عام' and SecondSudo(msg) then
+if text == 'حذف رد عام' and SecondSudo(msg) or text == '↫ حذف رد عام ♥️' and SecondSudo(msg) or text == 'مسح رد عام' and SecondSudo(msg) then
 local List = DevAli:smembers(yousef2.."Ali:Sudo:AllRed")
 if #List == 0 then
 Dev_Ali(msg.chat_id_, msg.id_, 1, "🇸🇦┇ لا توجد ردود مضافة" ,  1, "md")
@@ -9827,7 +9827,7 @@ DevAli:set(yousef2.."Ali:Add:AllRed"..msg.sender_user_id_,'DelAllRed')
 Dev_Ali(msg.chat_id_, msg.id_, 1, "🇸🇦┇ حسنا ارسل الكلمة لحذفها " ,  1, "md")
 return false
 end
-if text == 'اضف رد عام' and SecondSudo(msg) or text == '↫ اضف رد عام ♪' and SecondSudo(msg) then
+if text == 'اضف رد عام' and SecondSudo(msg) or text == '↫ اضف رد عام ♥️' and SecondSudo(msg) then
 DevAli:set(yousef2.."Ali:Add:AllRed"..msg.sender_user_id_,'SetAllRed')
 Dev_Ali(msg.chat_id_, msg.id_, 1, "🇸🇦┇ حسنا ارسل الكلمة الان " ,  1, "md")
 return false
@@ -9922,7 +9922,7 @@ return false
 end
 end
 --     Source yousef2     --
-if  text == "ردود المطور" and SecondSudo(msg) or text == "الردود العام" and SecondSudo(msg) or text == "ردود العام" and SecondSudo(msg) or text == "↫ الردود العام ♪" and SecondSudo(msg) then
+if  text == "ردود المطور" and SecondSudo(msg) or text == "الردود العام" and SecondSudo(msg) or text == "ردود العام" and SecondSudo(msg) or text == "↫ الردود العام ♥️" and SecondSudo(msg) then
 local redod = DevAli:smembers(yousef2.."Ali:Sudo:AllRed")
 MsgRep = '🇸🇦┇ ردود المطور ↫ ⤈ \n●━─━─━🇸🇦━─━─━●\n'
 for k,v in pairs(redod) do
@@ -10458,7 +10458,7 @@ io.popen("rm -rf ../.telegram-cli/*")
 print("\27[31;47m\n          ( تم تحديث السورس )          \n\27[0;34;49m\n") 
 Dev_Ali(msg.chat_id_, msg.id_, 1, '🇸🇦┇ تم التحديث الى الاصدار 2.0', 1, 'md') 
 end
-if text == 'تحديث' or text == 'تحديث البوت' or text == '↫ تحديث ♪' then  
+if text == 'تحديث' or text == 'تحديث البوت' or text == '↫ تحديث ♥️' then  
 dofile('yousef2.lua') 
 io.popen("rm -rf ../.telegram-cli/*")
 print("\27[31;47m\n        ( تم تحديث ملفات البوت )        \n\27[0;34;49m\n") 
@@ -10554,7 +10554,7 @@ Dev_Ali(msg.chat_id_, msg.id_, 1, '🇸🇦┇ تم تعطيل الترحيب ع
 DevAli:set(yousef2..'Ali:Lock:BotWelcome',true)
 return false
 end 
-if text and (text == 'تغير معلومات الترحيب' or text == 'تغيير معلومات الترحيب' or text == '↫ تغير معلومات الترحيب ♪') and SecondSudo(msg) then    
+if text and (text == 'تغير معلومات الترحيب' or text == 'تغيير معلومات الترحيب' or text == '↫ تغير معلومات الترحيب ♥️') and SecondSudo(msg) then    
 Dev_Ali(msg.chat_id_, msg.id_, 1, '🇸🇦┇ ارسل لي نص الترحيب', 1, 'md') 
 DevAli:del(yousef2..'Ali:Text:BotWelcome')
 DevAli:del(yousef2..'Ali:Photo:BotWelcome')
